@@ -3,15 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sameer | Home</title>
+  <title>Sameer's Personal Page | Home</title>
   <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap">
+  <style>
+    html {
+      background-color: #e9e4d8;
+    }
+    body {
+      max-width: 760px;
+      margin: 0 auto;
+      font-family: "Inter", "Segoe UI", sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      background-color: #f6f3ec;
+      color: #26303f;
+    }
+    header {
+      padding: 2.5rem 1.5rem 2rem;
+      background-color: #1f2a44;
+      color: #f6f3ec;
+      border-bottom: 5px solid #d9a441;
+    }
+    header p {
+      margin: 0;
+      color: #e2c98a;
+    }
+    main {
+      padding: 1.5rem;
+    }
+    footer {
+      padding: 1.5rem;
+      border-top: 1px solid #cfc8b8;
+      font-size: 0.9rem;
+      color: #4a5568;
+    }
+    h1 {
+      margin: 0 0 0.25rem;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2.4rem;
+    }
+    h2 {
+      margin-top: 0;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #d9a441;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.8rem;
+      color: #1f2a44;
+    }
+    h3 {
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #0f6b78;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(31, 42, 68, 0.25);
+    }
+    a {
+      color: #0f6b78;
+      text-underline-offset: 3px;
+    }
+    a:visited {
+      color: #0f6b78;
+    }
+    a:hover {
+      color: #1f2a44;
+    }
+    @media (max-width: 600px) {
+      header {
+        padding: 1.75rem 1rem 1.5rem;
+      }
+      main {
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <h1>Sameer</h1>
-  <h2>Home</h2>
-  <p>Yo this is Sameer, and this is the root of my website!</p>
-  <a href="itis3135/">Click to go to my ITIS3135 Site</a>
+  <header>
+    <h1>Sameer's Personal Page</h1>
+    <p><em>Always learning, always building.</em></p>
+  </header>
+
+  <main>
+    <h2>Home</h2>
+    <img src="images/sameer-gym.jpg" alt="Sameer after a workout at the gym" width="480" height="640">
+
+    <h3>About Me</h3>
+    <p>Hi, I'm Sameer, a junior studying computer science with a concentration in Information Technology. I'm looking forward to learning more about frontend development.</p>
+
+    <h3>My Coursework</h3>
+    <p>Looking for my class work? <a href="itis3135/">Visit my ITIS3135 course site</a>.</p>
+  </main>
+
+  <footer>
+    <p>Designed by Sameer</p>
+  </footer>
 
   <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
