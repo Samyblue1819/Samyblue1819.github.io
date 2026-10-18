@@ -1,0 +1,83 @@
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: "Trebuchet MS", sans-serif;
+  line-height: 1.6;
+  background-color: #f2efe6;
+  color: #2b3a33;
+}
+header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1rem;
+  align-items: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #e07a5f;
+}
+header img {
+  grid-row: 1 / span 3;
+}
+header nav {
+  grid-column: 2;
+}
+header p {
+  margin: 0;
+}
+h1 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
+  color: #1f5c46;
+}
+h2 {
+  font-family: Georgia, serif;
+  color: #1f5c46;
+}
+h6 {
+  font-size: 1.5em;
+  white-space: nowrap;
+  text-align: center;
+  margin: 1rem 0;
+}
+footer {
+  margin-top: 2rem;
+  padding-top: 0.75rem;
+  border-top: 3px solid #e07a5f;
+  font-size: 0.9rem;
+  text-align: center;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+figure {
+  margin: 1rem auto;
+  text-align: center;
+}
+figcaption {
+  font-style: italic;
+}
+blockquote {
+  text-align: center;
+}
+a {
+  color: #8a3a22;
+}
+a:visited {
+  color: #8a3a22;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+  }
+  header {
+    grid-template-columns: 1fr;
+  }
+  header img {
+    grid-row: auto;
+  }
+  header nav {
+    grid-column: auto;
+  }
+}
