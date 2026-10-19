@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sameer Sohail's motorcycling hobby site: what riding is, who rides Nightfury, and when, where, how and why to ride.">
+    <title>Motorcycling ⚡ What Is Motorcycling</title>
+    <link rel="icon" type="image/jpeg" href="images/favicon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;1,400&family=Chakra+Petch:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Palette: taken from my black and white night photos.
+           asphalt = background, graphite = panels, concrete = text,
+           fog = quiet text, headlight amber = links and accents.
+           No pure black or white is used. */
+        :root {
+            --asphalt: #1b1c20;
+            --graphite: #2a2c32;
+            --concrete: #d9d5cc;
+            --fog: #a8a49b;
+            --amber: #f0a43a;
+            --heading-font: "Chakra Petch", "Segoe UI", Arial, sans-serif;
+            --body-font: "Barlow", "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--asphalt);
+            color: var(--concrete);
+            font-family: var(--body-font);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        header,
+        main,
+        footer {
+            max-width: 52rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        header {
+            padding-top: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid var(--amber);
+        }
+
+        h1 {
+            margin: 0;
+            font-family: var(--heading-font);
+            font-size: clamp(2.2rem, 6vw, 3rem);
+            line-height: 1.1;
+            letter-spacing: 0.02em;
+        }
+
+        header p {
+            margin: 0.25rem 0 1.25rem;
+            color: var(--fog);
+        }
+
+        header nav {
+            font-family: var(--heading-font);
+            font-size: 1.05rem;
+        }
+
+        header nav a {
+            color: var(--concrete);
+            text-decoration: none;
+            padding-bottom: 0.15rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        header nav a:hover,
+        header nav a[aria-current="page"] {
+            color: var(--amber);
+            border-bottom-color: var(--amber);
+        }
+
+        /* Links: amber everywhere, visited stays the same color
+           (hex written out so the checker can compare them) */
+        a,
+        a:link {
+            color: #f0a43a;
+        }
+
+        a:visited {
+            color: #f0a43a;
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--amber);
+            outline-offset: 3px;
+        }
+
+        /* Main sections (each one acts as a page) */
+        main {
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+        }
+
+        h2 {
+            margin: 0 0 1rem;
+            font-family: var(--heading-font);
+            font-size: clamp(1.6rem, 4.5vw, 2rem);
+            line-height: 1.2;
+        }
+
+        h3 {
+            margin: 2rem 0 0.5rem;
+            font-family: var(--heading-font);
+            font-size: 1.3rem;
+            color: var(--amber);
+        }
+
+        p,
+        li {
+            max-width: 40rem;
+        }
+
+        li {
+            margin-bottom: 0.4rem;
+        }
+
+        figure {
+            width: fit-content;
+            max-width: 100%;
+            box-sizing: border-box;
+            margin: 0 0 2rem;
+            padding: 1rem;
+            background-color: var(--graphite);
+            border-left: 4px solid var(--amber);
+        }
+
+        figure img {
+            display: block;
+            max-width: 100%;
+            max-height: 30rem;
+            width: auto;
+            height: auto;
+        }
+
+        figcaption {
+            margin-top: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        figcaption p {
+            margin: 0.25rem 0 0;
+        }
+
+        figcaption em {
+            color: var(--fog);
+        }
+
+        table {
+            width: 100%;
+            margin: 1rem 0 1.5rem;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+
+        caption {
+            text-align: left;
+            font-family: var(--heading-font);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        th,
+        td {
+            padding: 0.6rem 0.75rem;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid var(--graphite);
+        }
+
+        th {
+            background-color: var(--graphite);
+            color: var(--amber);
+            font-family: var(--heading-font);
+        }
+
+        /* Footer: widest line first, narrowest last */
+        footer {
+            padding-top: 1.5rem;
+            padding-bottom: 2rem;
+            border-top: 3px solid var(--amber);
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--fog);
+        }
+
+        footer p {
+            max-width: none;
+            margin: 0.5rem 0;
+        }
+
+        /* validation links look like buttons */
+        footer nav a {
+            display: inline-block;
+            margin: 0.4rem 0.25rem;
+            padding: 0.35rem 0.9rem;
+            border: 2px solid var(--amber);
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: var(--heading-font);
+        }
+
+        footer nav a:hover {
+            background-color: var(--amber);
+            color: var(--asphalt);
+        }
+
+        /* Small screens (media queries kept at the end) */
+        @media (max-width: 40rem) {
+            body {
+                font-size: 1rem;
+            }
+
+            header nav {
+                font-size: 0.95rem;
+                line-height: 2;
+            }
+
+            th,
+            td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+    <script src="scripts/hobby.js" defer></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Motorcycling</h1>
+        <p><em>Two wheels, one life, no more waiting.</em></p>
+        <!-- spans hold the ⚡ divider so screen readers skip it -->
+        <nav aria-label="Hobby pages">
+            <a href="#what">What</a> <span aria-hidden="true">⚡</span>
+            <a href="#who">Who</a> <span aria-hidden="true">⚡</span>
+            <a href="#when">When</a> <span aria-hidden="true">⚡</span>
+            <a href="#where">Where</a> <span aria-hidden="true">⚡</span>
+            <a href="#how">How</a> <span aria-hidden="true">⚡</span>
+            <a href="#why">Why</a> <span aria-hidden="true">⚡</span>
+            <a href="#ai-prompts">AI Prompts</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- each section id is the target of a nav link; hobby.js shows one at a time -->
+        <section id="what">
+            <h2>What Is Motorcycling</h2>
+            <figure>
+                <img src="images/nightfury_kawasaki_at_night.jpg" alt="Low angle black and white photo of a black Kawasaki sport bike parked on a driveway at night" width="600" height="800">
+                <figcaption>
+                    <p>Nightfury, my Kawasaki, parked on the driveway after a night ride.</p>
+                    <p><em>Original photo taken by me. No AI was used.</em></p>
+                </figcaption>
+            </figure>
+            <p>Motorcycling is riding a two-wheeled motor vehicle, either to get somewhere or just for the ride itself. For me it is both. My bike is how I get to class and work every day, and it is also what I take out when I need to clear my head.</p>
+            <p>Riding is different from driving a car. You lean into turns, you feel the weather and the road, and you have to pay attention the whole time. That focus is a big part of why people love it.</p>
+            <h3>Ways People Ride</h3>
+            <ul>
+                <li>Commuting: using a bike as a daily driver, which is what I do.</li>
+                <li>Back road and mountain rides: chasing curvy roads on the weekend.</li>
+                <li>Touring: long trips that can last days, with luggage on the bike.</li>
+                <li>Track days: riding a race track in a safe, controlled setting.</li>
+            </ul>
+        </section>
+
+        <section id="who">
+            <h2>Who Rides Nightfury</h2>
+            <figure>
+                <img src="images/sameer_in_helmet.png" alt="Black and white photo of Sameer from behind, wearing a black helmet with swirling line art and a leather riding jacket" width="640" height="556">
+                <figcaption>
+                    <p>Me, geared up and ready to ride.</p>
+                    <p><em>Original photo taken by me. No AI was used.</em></p>
+                </figcaption>
+            </figure>
+            <p>I'm Sameer Sohail, a junior at UNC Charlotte studying computer science with a concentration in Information Technology. I have been riding since 2023, and my motorcycle is my daily driver around the greater Charlotte area.</p>
+            <p>My bike is named Nightfury, after the dragon in How to Train Your Dragon. It is black, it is fast, and yes, I know it is probably not the most original name.</p>
+            <h3>Quick Facts</h3>
+            <ul>
+                <li>Riding since: 2023</li>
+                <li>Bike: a black Kawasaki named Nightfury</li>
+                <li>Home roads: the greater Charlotte, NC area</li>
+                <li>Next goal: my first long ride, ending at the Tail of the Dragon</li>
+            </ul>
+        </section>
+
+        <section id="when">
+            <h2>When to Ride</h2>
+            <figure>
+                <img src="images/charlotte_road_at_dusk.jpg" alt="City street at dusk with car light trails and a sport motorcycle in the foreground" width="800" height="533">
+                <figcaption>
+                    <p>Dusk is my favorite time to ride in the city.</p>
+                    <p><em>AI prompt: "Photorealistic black and white photo of a city street at dusk with car light trails and a sport motorcycle in the foreground, high contrast, low angle, 3:2 landscape."</em></p>
+                </figcaption>
+            </figure>
+            <p>Because I ride every day, I ride in almost every season. Charlotte has mild weather most of the year, but each season has something to watch out for.</p>
+            <table>
+                <caption>Riding through the year in Charlotte</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Season</th>
+                        <th scope="col">What it's like</th>
+                        <th scope="col">My tip</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Spring</th>
+                        <td>Mild temperatures, pollen and rain showers</td>
+                        <td>Great riding, but watch for slick roads after rain.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Summer</th>
+                        <td>Hot, humid, afternoon thunderstorms</td>
+                        <td>Ride in the morning or evening and wear vented gear.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fall</th>
+                        <td>Cool, dry and clear</td>
+                        <td>The best season. Look out for wet leaves in turns.</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Winter</th>
+                        <td>Cold mornings, the odd icy day</td>
+                        <td>Ride midday when it's dry and let the tires warm up.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Time of day matters too. Rush hour is when drivers are most distracted, so I stay extra alert then. Late evenings are calmer and are my favorite time for a ride just for fun.</p>
+        </section>
+
+        <section id="where">
+            <h2>Where to Ride</h2>
+            <figure>
+                <img src="images/winding_mountain_road.jpg" alt="Winding two-lane mountain road through a forest, seen from above" width="800" height="533">
+                <figcaption>
+                    <p>The kind of mountain road on my bucket list.</p>
+                    <p><em>AI prompt: "Photorealistic black and white photo of a winding two-lane mountain road through an Appalachian forest, seen from above, high contrast, 3:2 landscape."</em></p>
+                </figcaption>
+            </figure>
+            <p>So far, all of my riding has been around the greater Charlotte area, and none of my rides have been longer than about an hour. North Carolina has some of the best riding roads in the country, so there is a lot left to explore.</p>
+            <table>
+                <caption>Places close to home and on my list</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Place</th>
+                        <th scope="col">Kind of ride</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Greater Charlotte streets</th>
+                        <td>Daily commute and city riding</td>
+                        <td>Ridden every day</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Lake Norman and Lake Wylie back roads</th>
+                        <td>Short, relaxed rides near the city</td>
+                        <td>Within an hour of home</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Blue Ridge Parkway</th>
+                        <td>Scenic mountain cruising</td>
+                        <td>Bucket list</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Tail of the Dragon (US 129)</th>
+                        <td>Tight, famous twisties</td>
+                        <td>Bucket list</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>My plan is to work up to longer rides step by step, starting with a day trip to the Blue Ridge Parkway before taking on the Tail of the Dragon.</p>
+        </section>
+
+        <section id="how">
+            <h2>How to Start Riding</h2>
+            <figure>
+                <img src="images/rider_gear_laid_out.jpg" alt="Motorcycle gear laid out on concrete: full-face helmet, jacket, gloves and boots" width="800" height="533">
+                <figcaption>
+                    <p>The gear I wear on every ride.</p>
+                    <p><em>AI prompt: "Photorealistic black and white flat-lay photo of motorcycle gear on concrete: full-face helmet, armored jacket, gloves and riding boots, high contrast, dramatic lighting, 3:2 landscape."</em></p>
+                </figcaption>
+            </figure>
+            <p>Getting started takes a few steps, but none of them are hard. Here is the order I would follow in North Carolina:</p>
+            <ol>
+                <li>Get a motorcycle learner permit from the NC DMV.</li>
+                <li>Take a beginner rider course to learn the basics in a parking lot.</li>
+                <li>Pass the DMV tests to add a motorcycle endorsement to your license.</li>
+                <li>Buy a beginner-friendly bike and insurance.</li>
+                <li>Practice in empty lots and quiet streets before heading into traffic.</li>
+            </ol>
+            <h3>All the Gear, All the Time</h3>
+            <ul>
+                <li>Full-face helmet</li>
+                <li>Riding jacket with armor</li>
+                <li>Gloves</li>
+                <li>Riding pants or reinforced jeans</li>
+                <li>Over-the-ankle boots</li>
+            </ul>
+        </section>
+
+        <section id="why">
+            <h2>Why I Ride</h2>
+            <figure>
+                <img src="images/rider_on_open_highway.jpg" alt="Lone motorcyclist riding toward the horizon on an empty highway, seen from behind" width="800" height="533">
+                <figcaption>
+                    <p>Riding is about not waiting for "someday."</p>
+                    <p><em>AI prompt: "Photorealistic black and white photo of a lone motorcyclist riding toward the horizon on an empty highway at sunset, seen from behind, high contrast, 3:2 landscape."</em></p>
+                </figcaption>
+            </figure>
+            <p>In 2023 I was diagnosed with cancer. It made me realize that no matter how "safe" you live, anything can happen. So instead of waiting, I decided to chase the thing I had wanted since I was a kid, and I got my motorcycle.</p>
+            <p>That want started with movies. These are the ones that made me look at bikes differently:</p>
+            <ul>
+                <li>Tron: Legacy, for the glowing light cycles.</li>
+                <li>The Matrix Reloaded, for Trinity riding a Ducati through the freeway chase.</li>
+                <li>Ghost Rider, for making a motorcycle feel like a superpower.</li>
+            </ul>
+            <p>Three years later, riding is still the best part of my day. It keeps me focused, it gets me outside, and it reminds me not to put off the things I care about.</p>
+        </section>
+
+        <section id="ai-prompts">
+            <h2>AI Prompts</h2>
+            <figure>
+                <img src="images/laptop_and_helmet_on_desk.jpg" alt="Laptop showing code next to a motorcycle helmet on a desk at night" width="800" height="533">
+                <figcaption>
+                    <p>Building this site with help from AI.</p>
+                    <p><em>AI prompt: "Photorealistic black and white photo of a laptop showing code next to a motorcycle helmet on a desk at night, high contrast, 3:2 landscape."</em></p>
+                </figcaption>
+            </figure>
+            <p>I used AI for help with designing this site and creating the images, as well as for help reviewing my page for errors. My own two photos were not made or edited with AI. These are the prompts I used:</p>
+            <h3>Code and Text Prompts</h3>
+            <ol>
+                <li>"Check my page for anything that would cause HTML, CSS, or WAVE accessibility errors or warnings."</li>
+                <li>"Help with creating a single-page hobby site about motorcycling for my ITIS3135 class."</li>
+            </ol>
+            <h3>Image Prompts</h3>
+            <p>Every AI image used the same style so they match my black and white photos: photorealistic, black and white, high contrast, 3:2 landscape. The exact prompt for each image is under its picture.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Site designed by <a href="../sohailwebdesign.co/">Sohail Web Design</a> ⚡ Back to <a href="../index.html">Sameer Sohail's Sandy Snake | ITIS3135</a></p>
+        <nav aria-label="Validation">
+            <a href="https://validator.w3.org/check?uri=referer">Validate HTML</a>
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
+            <a href="https://wave.webaim.org/report#/https://webpages.charlotte.edu/ssohail1/itis3135/hobby/">Check Accessibility</a>
+        </nav>
+        <p>Sohail Web Design ©2026</p>
+    </footer>
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>
