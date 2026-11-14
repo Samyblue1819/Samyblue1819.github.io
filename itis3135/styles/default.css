@@ -16,10 +16,16 @@ header {
   border-bottom: 3px solid #e07a5f;
 }
 header img {
-  grid-row: 1 / span 3;
+  grid-row: 1 / span 4;
 }
 header nav {
   grid-column: 2;
+}
+header nav + nav {
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
+  border-top: 2px solid #1f5c46;
+  font-size: 0.9rem;
 }
 header p {
   margin: 0;
