@@ -86,4 +86,8 @@ a:visited {
   header nav {
     grid-column: auto;
   }
+}.disclaimer {
+  margin-top: 2rem;
+  font-style: italic;
+  text-align: center;
 }

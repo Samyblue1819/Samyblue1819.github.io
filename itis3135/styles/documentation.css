@@ -1,0 +1,74 @@
+#documentation .doc-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+#navbar {
+  position: sticky;
+  top: 0;
+  flex: 0 0 200px;
+  /* black for strong contrast in the bold comic-style border/shadow look */
+  background-color: #000;
+}
+#documentation .nav-title {
+  display: block;
+  margin: 0;
+  padding: 20px 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  /* white text/background for maximum contrast and readability */
+  color: #fff;
+  background-color: #b3161a;
+  border: none;
+}
+#documentation .nav-link {
+  display: block;
+  padding: 12px 15px;
+  /* white text/background for maximum contrast and readability */
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+}
+#documentation .nav-link:hover,
+#documentation .nav-link:focus {
+  /* black for strong contrast in the bold comic-style border/shadow look */
+  color: #000;
+  /* white text/background for maximum contrast and readability */
+  background-color: #fff;
+}
+#main-doc {
+  flex: 1;
+}
+#documentation .main-section {
+  margin-bottom: 20px;
+  padding: 0 20px 10px;
+  /* white text/background for maximum contrast and readability */
+  background-color: #fff;
+  /* black for strong contrast in the bold comic-style border/shadow look */
+  border: 3px solid #000;
+  /* black for strong contrast in the bold comic-style border/shadow look */
+  box-shadow: 6px 6px 0 #000;
+}
+#documentation .section-title {
+  display: block;
+  margin: 0;
+  padding: 10px 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  /* black for strong contrast in the bold comic-style border/shadow look */
+  border-bottom: 3px solid #000;
+}
+#documentation code {
+  padding: 2px 4px;
+  background-color: #eee;
+}
+@media (max-width: 700px) {
+  #documentation .doc-layout {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #navbar {
+    position: static;
+    flex-basis: auto;
+  }
+}

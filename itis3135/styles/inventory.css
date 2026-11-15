@@ -1,0 +1,124 @@
+#inventory .inventory-wrap {
+  padding: 2rem 1rem;
+  font-family: "Spectral", Georgia, serif;
+  color: #1a1410;
+  background-color: #0d0b0a;
+  background-image: radial-gradient(circle at 50% 0%, #3a0d0d 0%, #0d0b0a 60%);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+#inventory .inv-title {
+  margin: 0 0 1.5rem;
+  text-align: center;
+  font-family: "Pirata One", "Old English Text MT", serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #e0423b;
+  /* black for strong contrast in the bold comic-style border/shadow look */
+  text-shadow: 2px 2px 0 #000;
+}
+#inventory table {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #d9ccb0;
+  border: 3px solid #2a2622;
+  box-shadow: 0 0 0 6px #0d0b0a, 0 0 0 8px #5a1210, 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+#inventory th {
+  padding: 14px 12px;
+  text-align: left;
+  font-family: "Pirata One", serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #d9ccb0;
+  background-color: #1a1715;
+  border-bottom: 3px solid #b3201b;
+}
+#inventory td {
+  padding: 12px;
+  border-bottom: 1px solid #8a7a5c;
+  font-size: 1.05rem;
+}
+#inventory td:first-child {
+  font-weight: 600;
+}
+#inventory td span {
+  display: inline-block;
+}
+#inventory tr[class="weapon"] {
+  background-image: linear-gradient(90deg, rgba(214, 120, 40, 0.3), rgba(217, 204, 176, 0) 70%);
+}
+#inventory tr[class="vitality"] {
+  background-image: linear-gradient(90deg, rgba(60, 150, 90, 0.3), rgba(217, 204, 176, 0) 70%);
+}
+#inventory tr[class="spirit"] {
+  background-image: linear-gradient(90deg, rgba(130, 70, 200, 0.28), rgba(217, 204, 176, 0) 70%);
+}
+#inventory tr[class="weapon"] span[class="status"] {
+  border: 2px solid #5c2a06;
+  background-color: #e08a2c;
+  color: #1a1410;
+}
+#inventory tr[class="vitality"] span[class="status"] {
+  border: 2px solid #0f3d22;
+  background-color: #1f6b3d;
+  /* white text/background for maximum contrast and readability */
+  color: #ffffff;
+}
+#inventory tr[class="spirit"] span[class="status"] {
+  border: 2px solid #2b1050;
+  background-color: #5b2a9e;
+  /* white text/background for maximum contrast and readability */
+  color: #ffffff;
+}
+#inventory span[class="status"],
+#inventory span[class^="rate"] {
+  box-sizing: border-box;
+  height: 1.7em;
+  width: 7.5em;
+  padding: 2px 6px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.7em;
+}
+#inventory span[class^="rate"] > span {
+  box-sizing: border-box;
+  border: 2px solid #2a2622;
+  border-radius: 50% 50% 50% 0;
+  margin: 0 3px;
+  height: 13px;
+  width: 13px;
+  background-color: #bfb092;
+  transform: rotate(-45deg);
+  vertical-align: middle;
+}
+#inventory span[class~="one"] > span:first-child,
+#inventory span[class~="two"] > span:nth-child(-n+2),
+#inventory span[class~="three"] > span:nth-child(-n+3),
+#inventory span[class~="four"] > span {
+  background-image: linear-gradient(#d4312a, #6e0d09);
+}
+@media (max-width: 640px) {
+  #inventory .inv-title {
+    font-size: 2.2rem;
+  }
+  #inventory table {
+    font-size: 0.9rem;
+  }
+  #inventory td,
+  #inventory th {
+    padding: 8px 6px;
+  }
+}
+#inventory .shops {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+#inventory .shops figure {
+  flex: 1 1 220px;
+  margin: 0;
+}

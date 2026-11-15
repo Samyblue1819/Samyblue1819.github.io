@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sameer Sohail's Sandy Snake | ITIS3135 | Product</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-course.png">
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/product.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <!-- The main id scopes product.css to this page. The div elements and the ids/classes (page-wrapper, header, nav-bar, hero, product-name, features, pricing, feature, price) are required by the freeCodeCamp product landing project and used for flexbox layout. -->
+  <main id="product">
+    <h2>Product</h2>
+    <div id="page-wrapper">
+      <div id="header">
+        <img id="header-img" src="images/mascot-logo.png" alt="Site logo" width="50" height="50">
+        <nav id="nav-bar" aria-label="Product menu">
+          <a class="nav-link" href="#features">Features</a>
+          <a class="nav-link" href="#video-section">Video</a>
+          <a class="nav-link" href="#pricing">Pricing</a>
+        </nav>
+      </div>
+
+      <section id="hero">
+        <p class="brand">Fairfax Industries &middot; Artillery Bought and Sold</p>
+        <h3 class="product-name">Fairfax Chimera Mark 1</h3>
+        <img class="product-img" src="images/chimera-mk1.png" alt="The Fairfax Chimera Mark 1, a bulky copper gun with a glowing orange core" width="320" height="160">
+        <p>Fairfax says "All's Fair," but Deadman Danny will tell you otherwise: the Chimera Mark 1 gives you the advantage.</p>
+        <form id="form" action="https://www.freecodecamp.org/email-submit">
+          <label for="email" class="visually-hidden">Email</label>
+          <input id="email" name="email" type="email" placeholder="Enter your email" required>
+          <input id="submit" type="submit" value="Get Updates">
+        </form>
+      </section>
+
+      <section id="features">
+        <h3>Features</h3>
+        <div class="feature-list">
+          <div class="feature">
+            <h4>Extended Magazine</h4>
+            <p>More rounds per clip so you spend less time reloading mid-fight.</p>
+          </div>
+          <div class="feature">
+            <h4>Headshot Booster</h4>
+            <p>Built-in bonus damage for players who aim for the head.</p>
+          </div>
+          <div class="feature">
+            <h4>Safety Optional</h4>
+            <p>Fairfax famously knows nothing about safety. According to Danny, that's a feature.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="video-section">
+        <h3>See It in Action</h3>
+        <iframe id="video" src="https://platform.twitter.com/embed/Tweet.html?id=2110305005786079606&amp;theme=dark" title="Chimera Mark 1 gameplay video by Joechuck777 on X" width="550" height="600"></iframe>
+        <p class="video-link"><a href="https://x.com/Joechuck777/status/2110305005786079606/video/1" target="_blank" rel="noopener">View on X</a> (video by Joechuck777)</p>
+      </section>
+
+      <section id="pricing">
+        <h3>Pricing</h3>
+        <div class="price-list">
+          <div class="price">
+            <h4>Standard</h4>
+            <p>3,200 souls</p>
+          </div>
+          <div class="price">
+            <h4>Experts Only</h4>
+            <p>6,400 souls</p>
+          </div>
+        </div>
+        <figure>
+          <img class="poster" src="images/fairfax-poster.png" alt="Fairfax ad poster of Deadman Danny pointing at the viewer" width="393" height="508">
+          <figcaption>A Fairfax recruitment poster.</figcaption>
+        </figure>
+        <p class="tagline">All's Fair!</p>
+      </section>
+    </div>
+    <p class="disclaimer"><small>Deadlock, its characters, items, and images are the property of Valve Corporation. This page is a non-commercial student project for ITIS3135, and the material is used for educational purposes under the fair use doctrine (17 U.S.C. &sect; 107). No copyright infringement is intended.</small></p>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sameer Sohail's Sandy Snake | ITIS3135 | Documentation</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-course.png">
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/documentation.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <!-- The main id scopes documentation.css to this page. The doc-layout div and main-doc div make the sidebar layout; the navbar id, nav-link class, main-section class, nav-title and section-title classes, and section ids are required by the freeCodeCamp documentation project. -->
+  <main id="documentation">
+    <h2>Documentation</h2>
+    <p>A beginner's field guide to Deadlock: how a match works, from souls and lanes to objectives and items.</p>
+    <div class="doc-layout">
+      <nav id="navbar" aria-label="Documentation menu">
+        <h3 class="nav-title">Deadlock Guide</h3>
+        <a class="nav-link" href="#Introduction">Introduction</a>
+        <a class="nav-link" href="#Souls">Souls</a>
+        <a class="nav-link" href="#Lanes">Lanes</a>
+        <a class="nav-link" href="#Objectives">Objectives</a>
+        <a class="nav-link" href="#Items">Items</a>
+        <a class="nav-link" href="#Movement">Movement</a>
+      </nav>
+
+      <div id="main-doc">
+        <section class="main-section" id="Introduction">
+          <h3 class="section-title">Introduction</h3>
+          <p>Deadlock is a team-based hero shooter from Valve that mixes a third-person shooter with a MOBA. Two teams of six fight across one map.</p>
+          <p>You win by destroying the enemy <code>Patron</code>, the giant idol at the center of their base. Everything else in a match builds toward that.</p>
+        </section>
+
+        <section class="main-section" id="Souls">
+          <h3 class="section-title">Souls</h3>
+          <p>Souls are the game's only resource. You use them to level up your hero and to buy items.</p>
+          <ul>
+            <li><code>Troopers</code>: AI units that march down each lane and drop souls when killed</li>
+            <li><code>Deny</code>: shoot an enemy trooper's soul orb before they can claim it</li>
+            <li><code>Soul Urn</code>: appears after 10 minutes; carry it across the map for a team bonus</li>
+          </ul>
+        </section>
+
+        <section class="main-section" id="Lanes">
+          <h3 class="section-title">Lanes</h3>
+          <p>The map has three lanes, each with troopers marching toward the enemy base. Early on, heroes split into solo and duo lanes, then group up and roam in the mid-game.</p>
+          <p>Ziplines run down every lane so heroes can get back to the fight quickly.</p>
+        </section>
+
+        <section class="main-section" id="Objectives">
+          <h3 class="section-title">Objectives</h3>
+          <p>Each lane has structures you must take down in order:</p>
+          <ul>
+            <li><code>Guardian</code>: the first tower in the lane</li>
+            <li><code>Walker</code>: the lane boss behind the Guardian</li>
+            <li><code>Base Guardians</code>: two towers outside the enemy base</li>
+            <li><code>Shrines</code>: break both to weaken the Patron</li>
+            <li><code>Patron</code>: has two phases; destroying it wins the game</li>
+          </ul>
+        </section>
+
+        <section class="main-section" id="Items">
+          <h3 class="section-title">Items</h3>
+          <p>Items come from three shops: <code>Weapon</code>, <code>Vitality</code>, and <code>Spirit</code>. Each shop has four tiers that cost 800, 1,600, 3,200, and 6,400 souls.</p>
+          <p>Most items are passive. Some are <code>Active</code> and have to be triggered, and <code>Imbue</code> items attach to one of your abilities. See my Inventory page for the items I buy most.</p>
+        </section>
+
+        <section class="main-section" id="Movement">
+          <h3 class="section-title">Movement</h3>
+          <p>Movement is a big part of the skill in Deadlock. Dash, slide, and dash-jump each use stamina.</p>
+          <p>Sliding right after a dash keeps your momentum. Pair movement with heroes like Wraith, whose Project Mind teleports her in or out of fights.</p>
+        </section>
+      </div>
+    </div>
+    <p class="disclaimer"><small>Deadlock, its characters, items, and images are the property of Valve Corporation. This page is a non-commercial student project for ITIS3135, and the material is used for educational purposes under the fair use doctrine (17 U.S.C. &sect; 107). No copyright infringement is intended.</small></p>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>

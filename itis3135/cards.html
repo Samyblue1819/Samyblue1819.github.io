@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sameer Sohail's Sandy Snake | ITIS3135 | Cards</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-course.png">
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/cards.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <!-- The main id scopes cards.css to this page. The playing-cards div id and the class names (deck-title, card-img, ace, disclaimer) are needed to lay out and style the deck with flexbox. -->
+  <main id="cards">
+    <h2>Cards</h2>
+    <p>Wraith fights with a deck of cards. Her Card Trick ability summons a card whenever she deals weapon damage, and each suit gives a different bonus when the card hits. A Joker counts as every suit at once.</p>
+    <h3 class="deck-title">Wraith's Deck</h3>
+    <div id="playing-cards">
+      <img class="card-img" src="images/wraith-heart.png" alt="Hearts card" width="96" height="143">
+      <img class="card-img" src="images/wraith-spade.png" alt="Spades card" width="96" height="143">
+      <img class="card-img" src="images/wraith-club.png" alt="Clubs card" width="96" height="143">
+      <img class="card-img" src="images/wraith-diamond.png" alt="Diamonds card" width="96" height="143">
+      <img class="card-img" src="images/wraith-emblem.png" alt="Wraith's emblem card" width="96" height="143">
+      <img class="card-img ace" src="images/wraith-ace-diamond.png" alt="Ace of Diamonds card" width="52" height="82">
+      <img class="card-img ace" src="images/wraith-ace-spade.png" alt="Ace of Spades card" width="52" height="82">
+    </div>
+
+    <p class="disclaimer"><small>Deadlock, its characters, items, and images are the property of Valve Corporation. This page is a non-commercial student project for ITIS3135, and the material is used for educational purposes under the fair use doctrine (17 U.S.C. &sect; 107). No copyright infringement is intended.</small></p>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>

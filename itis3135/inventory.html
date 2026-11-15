@@ -6,14 +6,148 @@
   <title>Sameer Sohail's Sandy Snake | ITIS3135 | Inventory</title>
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-course.png">
   <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pirata+One&amp;family=Spectral:wght@400;600&amp;display=swap">
+  <link rel="stylesheet" href="styles/inventory.css">
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div data-include="components/header.html"></div>
 
-  <main>
+  <!-- The main id scopes inventory.css to this page. The div and the classes on rows and spans (weapon, vitality, spirit, status, rate) color each shop and draw the tier pips; the span elements hold the badges and pips. -->
+  <main id="inventory">
     <h2>Inventory</h2>
-    <p>Coming soon: my freeCodeCamp Responsive Web Design Inventory project.</p>
+    <p>My full Spirit Dash Infernus build. Infernus burns enemies with Afterburn and Flame Dash, so this build stacks Spirit Power, longer ability duration, and Spirit Shred, then adds Vitality items to stay alive. Items are listed in the order I buy them.</p>
+    <div class="inventory-wrap">
+      <h3 class="inv-title">Spirit Dash Infernus Build</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Cost</th>
+            <th>Phase</th>
+            <th>Shop</th>
+            <th>Tier</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="spirit">
+            <td>Extra Spirit</td>
+            <td>800 souls</td>
+            <td>Early</td>
+            <td><span class="status">Spirit</span></td>
+            <td><span class="rate one" role="img" aria-label="Tier 1"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="weapon">
+            <td>Headshot Booster</td>
+            <td>800 souls</td>
+            <td>Early</td>
+            <td><span class="status">Weapon</span></td>
+            <td><span class="rate one" role="img" aria-label="Tier 1"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="vitality">
+            <td>Extra Health</td>
+            <td>800 souls</td>
+            <td>Early</td>
+            <td><span class="status">Vitality</span></td>
+            <td><span class="rate one" role="img" aria-label="Tier 1"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="spirit">
+            <td>Improved Spirit</td>
+            <td>1,600 souls</td>
+            <td>Early</td>
+            <td><span class="status">Spirit</span></td>
+            <td><span class="rate two" role="img" aria-label="Tier 2"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="spirit">
+            <td>Duration Extender</td>
+            <td>1,600 souls</td>
+            <td>Mid</td>
+            <td><span class="status">Spirit</span></td>
+            <td><span class="rate two" role="img" aria-label="Tier 2"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="vitality">
+            <td>Spirit Lifesteal</td>
+            <td>1,600 souls</td>
+            <td>Mid</td>
+            <td><span class="status">Vitality</span></td>
+            <td><span class="rate two" role="img" aria-label="Tier 2"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="weapon">
+            <td>Spirit Shredder Bullets</td>
+            <td>1,600 souls</td>
+            <td>Mid</td>
+            <td><span class="status">Weapon</span></td>
+            <td><span class="rate two" role="img" aria-label="Tier 2"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="spirit">
+            <td>Superior Duration</td>
+            <td>3,200 souls</td>
+            <td>Mid</td>
+            <td><span class="status">Spirit</span></td>
+            <td><span class="rate three" role="img" aria-label="Tier 3"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="weapon">
+            <td>Spirit Rend</td>
+            <td>3,200 souls</td>
+            <td>Mid</td>
+            <td><span class="status">Weapon</span></td>
+            <td><span class="rate three" role="img" aria-label="Tier 3"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="weapon">
+            <td>Toxic Bullets</td>
+            <td>3,200 souls</td>
+            <td>Mid</td>
+            <td><span class="status">Weapon</span></td>
+            <td><span class="rate three" role="img" aria-label="Tier 3"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="spirit">
+            <td>Escalating Exposure</td>
+            <td>6,400 souls</td>
+            <td>Late</td>
+            <td><span class="status">Spirit</span></td>
+            <td><span class="rate four" role="img" aria-label="Tier 4"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="spirit">
+            <td>Boundless Spirit</td>
+            <td>6,400 souls</td>
+            <td>Late</td>
+            <td><span class="status">Spirit</span></td>
+            <td><span class="rate four" role="img" aria-label="Tier 4"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="vitality">
+            <td>Leech</td>
+            <td>6,400 souls</td>
+            <td>Late</td>
+            <td><span class="status">Vitality</span></td>
+            <td><span class="rate four" role="img" aria-label="Tier 4"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+          <tr class="weapon">
+            <td>Ricochet</td>
+            <td>6,400 souls</td>
+            <td>Late</td>
+            <td><span class="status">Weapon</span></td>
+            <td><span class="rate four" role="img" aria-label="Tier 4"><span></span><span></span><span></span><span></span></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>The Three Shops</h3>
+    <div class="shops">
+      <figure>
+        <img src="images/shop-weapon.png" alt="Fairfax weapon shop menu showing items in four tiers" width="1050" height="940">
+        <figcaption>Weapon: Fairfax, Artillery Bought and Sold</figcaption>
+      </figure>
+      <figure>
+        <img src="images/shop-vitality.png" alt="MPS vitality shop menu showing items in four tiers" width="1052" height="944">
+        <figcaption>Vitality: MPS, Mystic Pharmaceutical Stores</figcaption>
+      </figure>
+      <figure>
+        <img src="images/shop-spirit.png" alt="Curiosity spirit shop catalog showing items in four tiers" width="472" height="423">
+        <figcaption>Spirit: the Curiosity catalog</figcaption>
+      </figure>
+    </div>
+    <p class="disclaimer"><small>Deadlock, its characters, items, and images are the property of Valve Corporation. This page is a non-commercial student project for ITIS3135, and the material is used for educational purposes under the fair use doctrine (17 U.S.C. &sect; 107). No copyright infringement is intended.</small></p>
   </main>
 
   <div data-include="components/footer.html"></div>

@@ -6,14 +6,146 @@
   <title>Sameer Sohail's Sandy Snake | ITIS3135 | Survey</title>
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-course.png">
   <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Oswald:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="styles/survey.css">
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div data-include="components/header.html"></div>
 
-  <main>
+  <!-- The main id scopes survey.css to this page. The container, form-group, and game-info div elements group form parts; the span tags are info tags; the ids and classes (title, description, section-title, option, hint) are required by the freeCodeCamp survey project or used for styling. -->
+  <main id="survey">
     <h2>Survey</h2>
-    <p>Coming soon: my freeCodeCamp Responsive Web Design Survey project.</p>
+    <div class="container">
+      <h3 id="title">Deadlock</h3>
+      <p id="description">A survey exploring your thoughts, impressions, and interest in Deadlock. You don't need to have played Deadlock to participate.</p>
+      <div class="game-info">
+        <span>ONLINE</span>
+        <span>DEADLOCK</span>
+        <span>TEAM-BASED</span>
+        <span>SURVEY</span>
+      </div>
+
+      <form id="survey-form">
+        <h4 class="section-title">Player Information</h4>
+
+        <div class="form-group">
+          <label id="name-label" for="name">Name</label>
+          <input id="name" type="text" name="name" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="mascot">Mascot (adjective + animal)</label>
+          <input id="mascot" type="text" name="mascot" placeholder="e.g. Sandy Snake">
+        </div>
+
+        <div class="form-group">
+          <label id="email-label" for="email">Email</label>
+          <input id="email" type="email" name="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="form-group">
+          <label id="number-label" for="number">Age</label>
+          <input id="number" type="number" name="age" min="0" max="100" placeholder="Age">
+        </div>
+
+        <div class="form-group">
+          <label for="background">Personal background</label>
+          <textarea id="background" name="background" placeholder="A little about you..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="computer">Primary computer</label>
+          <input id="computer" type="text" name="computer" placeholder="e.g. Windows 11 desktop">
+        </div>
+
+        <h4 class="section-title">Deadlock Experience</h4>
+
+        <div class="form-group">
+          <label for="dropdown">How familiar are you with Deadlock?</label>
+          <select id="dropdown" name="familiarity">
+            <option value="">Select an option</option>
+            <option value="never-heard">I've never heard of Deadlock</option>
+            <option value="heard">I've heard of Deadlock</option>
+            <option value="watched">I've watched Deadlock gameplay</option>
+            <option value="played">I've played Deadlock</option>
+            <option value="regular">I play Deadlock regularly</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="hero">Favorite hero</label>
+          <input id="hero" type="text" name="hero" placeholder="e.g. Wraith">
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>Which shop do you buy from most?</legend>
+            <label class="option"><input type="radio" name="shop" value="weapon"> Weapon</label>
+            <label class="option"><input type="radio" name="shop" value="vitality"> Vitality</label>
+            <label class="option"><input type="radio" name="shop" value="spirit"> Spirit</label>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>What is your first impression of Deadlock?</legend>
+            <label class="option"><input type="radio" name="impression" value="interested"> It looks interesting</label>
+            <label class="option"><input type="radio" name="impression" value="curious"> I'm curious about it</label>
+            <label class="option"><input type="radio" name="impression" value="not-interested"> It doesn't really interest me</label>
+            <label class="option"><input type="radio" name="impression" value="no-opinion"> I don't have an opinion yet</label>
+          </fieldset>
+        </div>
+
+        <h4 class="section-title">What Stands Out?</h4>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>What aspects of Deadlock interest you?</legend>
+            <label class="option"><input type="checkbox" name="appeal" value="characters"> The characters</label>
+            <label class="option"><input type="checkbox" name="appeal" value="teamwork"> Team-based gameplay</label>
+            <label class="option"><input type="checkbox" name="appeal" value="competitive"> Competitive gameplay</label>
+            <label class="option"><input type="checkbox" name="appeal" value="strategy"> Strategy and decision-making</label>
+            <label class="option"><input type="checkbox" name="appeal" value="movement"> Movement and mechanical skill</label>
+            <label class="option"><input type="checkbox" name="appeal" value="art-style"> The art style</label>
+            <label class="option"><input type="checkbox" name="appeal" value="world"> The world and atmosphere</label>
+            <label class="option"><input type="checkbox" name="appeal" value="none"> Nothing in particular</label>
+          </fieldset>
+        </div>
+
+        <h4 class="section-title">Your Experience</h4>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>If you've played Deadlock, what do you enjoy most?</legend>
+            <label class="option"><input type="checkbox" name="experience" value="combat"> Combat</label>
+            <label class="option"><input type="checkbox" name="experience" value="heroes"> Playing different heroes</label>
+            <label class="option"><input type="checkbox" name="experience" value="teamwork"> Working with teammates</label>
+            <label class="option"><input type="checkbox" name="experience" value="strategy"> Strategy</label>
+            <label class="option"><input type="checkbox" name="experience" value="movement"> Movement</label>
+            <label class="option"><input type="checkbox" name="experience" value="exploration"> Exploring the game</label>
+          </fieldset>
+        </div>
+
+        <h4 class="section-title">Your Thoughts</h4>
+
+        <div class="form-group">
+          <label for="favorite">What interests you most about Deadlock?</label>
+          <textarea id="favorite" name="favorite" placeholder="Tell us what catches your attention..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="comments">Anything else you want to say about Deadlock?</label>
+          <textarea id="comments" name="comments" placeholder="Your thoughts, opinions, or feedback..."></textarea>
+          <p class="hint">There are no wrong answers.</p>
+        </div>
+
+        <button id="submit" type="submit">Submit Survey</button>
+      </form>
+
+      <p class="footer-note">DEADLOCK // SURVEY // 001</p>
+    </div>
+    <p class="disclaimer"><small>Deadlock, its characters, items, and images are the property of Valve Corporation. This page is a non-commercial student project for ITIS3135, and the material is used for educational purposes under the fair use doctrine (17 U.S.C. &sect; 107). No copyright infringement is intended.</small></p>
   </main>
 
   <div data-include="components/footer.html"></div>

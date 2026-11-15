@@ -1,0 +1,161 @@
+#survey .container {
+  position: relative;
+  padding: 40px;
+  box-sizing: border-box;
+  font-family: "Oswald", Arial, sans-serif;
+  color: #e8dfd0;
+  background: linear-gradient(#262b2a, #1b1f1f);
+  border: 1px solid #555951;
+  border-top: 5px solid #c08a55;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+#title {
+  margin: 5px 0 10px;
+  text-align: center;
+  font-family: "Libre Baskerville", Georgia, serif;
+  font-size: clamp(28px, 6vw, 44px);
+  letter-spacing: 3px;
+  color: #e8dfd0;
+  text-transform: uppercase;
+}
+#title::before {
+  content: "🎮";
+  display: block;
+  margin-bottom: 10px;
+  font-size: 34px;
+}
+#description {
+  margin: 18px auto 30px;
+  text-align: center;
+  color: #c4c8c4;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+#survey .game-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 auto 30px;
+}
+#survey .game-info span {
+  padding: 5px 9px;
+  border: 1px solid #4f5752;
+  background: #191d1c;
+  color: #b4bdb6;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+#survey .section-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 35px 0 22px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #4b514d;
+  font-family: "Oswald", Arial, sans-serif;
+  color: #d9a46c;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#survey .section-title::before {
+  content: "◆";
+  font-size: 9px;
+  color: #8fb3a0;
+}
+#survey .form-group {
+  margin-bottom: 26px;
+}
+#survey label,
+#survey legend {
+  display: block;
+  margin-bottom: 10px;
+  color: #ddd6c9;
+  font-weight: 600;
+}
+#survey input,
+#survey select,
+#survey textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #6a706b;
+  background: #171b1b;
+  color: #e8dfd0;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+}
+#survey input::placeholder,
+#survey textarea::placeholder {
+  color: #a3aaa5;
+}
+#survey input:focus,
+#survey select:focus,
+#survey textarea:focus {
+  outline: 2px solid #c08a55;
+  border-color: #c08a55;
+}
+#survey fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+#survey .option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+  padding: 8px 12px;
+  color: #d5d9d5;
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+  border-left: 2px solid transparent;
+}
+#survey .option:hover {
+  background: rgba(192, 138, 85, 0.08);
+  border-left-color: #c08a55;
+}
+#survey .option input {
+  width: auto;
+  accent-color: #c08a55;
+}
+#survey textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+#survey .hint {
+  margin-top: 7px;
+  color: #a3aaa5;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-style: italic;
+}
+#submit {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 15px;
+  padding: 16px;
+  border: 1px solid #d19a64;
+  background: linear-gradient(90deg, #c18b58, #d2a06c, #c18b58);
+  color: #171918;
+  font-family: "Oswald", Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+#survey .footer-note {
+  margin-top: 25px;
+  text-align: center;
+  color: #a3aaa5;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+@media (max-width: 600px) {
+  #survey .container {
+    padding: 25px 18px;
+  }
+}

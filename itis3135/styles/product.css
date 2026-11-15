@@ -1,0 +1,121 @@
+#page-wrapper {
+  font-family: Arial, sans-serif;
+  background-color: #f3e3c3;
+  color: #111;
+}
+#header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #111;
+  z-index: 10;
+}
+#nav-bar {
+  display: flex;
+  gap: 20px;
+}
+#product .nav-link {
+  /* white text/background for maximum contrast and readability */
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+#product .nav-link:hover,
+#product .nav-link:focus {
+  color: #f0a050;
+}
+#product section {
+  padding: 30px 20px;
+  text-align: center;
+  scroll-margin-top: 80px;
+}
+.product-name {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+#product .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+#email {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 250px;
+  border: 2px solid #111;
+}
+#submit {
+  padding: 10px 20px;
+  border: 2px solid #111;
+  background-color: #a8401a;
+  /* white text/background for maximum contrast and readability */
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+#product .feature-list,
+#product .price-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+#product .feature,
+#product .price {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 15px;
+  /* white text/background for maximum contrast and readability */
+  background-color: #fff;
+  border: 3px solid #111;
+  box-shadow: 5px 5px 0 #111;
+}
+#product .video-link {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+@media (max-width: 700px) {
+  #product .feature-list,
+  #product .price-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  #email {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+}
+#product .brand {
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8a3a12;
+}
+#product .tagline {
+  margin-top: 25px;
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #8a3a12;
+}
+#product .product-img {
+  display: block;
+  margin: 10px auto;
+}
+#product .poster {
+  max-width: 300px;
+  border: 3px solid #111;
+}
+#video {
+  display: block;
+  width: 100%;
+  max-width: 550px;
+  height: 600px;
+  margin: 0 auto;
+  border: none;
+}
