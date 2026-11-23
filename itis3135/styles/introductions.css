@@ -2,7 +2,6 @@
 .intro-controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
   align-items: center;
   margin-bottom: 1rem;
 }
@@ -12,6 +11,7 @@
   border: 2px solid #1f5c46;
   border-radius: 4px;
   font-family: inherit;
+  margin: 0.25rem 0.5rem 0.25rem 0;
 }
 .intro-status {
   font-style: italic;
@@ -19,7 +19,7 @@
 .intro-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  margin: 0 -0.5rem;
 }
 .intro-card {
   background-color: #fffdf7;
@@ -29,6 +29,7 @@
   padding: 0.75rem;
   text-align: center;
   flex: 1 1 220px;
+  margin: 0.5rem;
 }
 .intro-card img {
   width: 100%;
