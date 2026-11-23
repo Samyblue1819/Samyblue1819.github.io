@@ -1,6 +1,7 @@
 // introduction.js: makes the Introduction Form work.
 // It validates the form, adds and removes course fields, clears and resets the form,
-// and on Submit replaces the form with an introduction built from what was entered.
+// on Submit replaces the form with an introduction built from what was entered,
+// and the Generate buttons show that same data as raw HTML, JSON or XML.
 
 const formElement = document.getElementById("form");
 const coursesBox = document.getElementById("courses");
@@ -82,6 +83,57 @@ function resetForm() {
   setUpCourseButtons();
 }
 
+// Gathers everything in the form into one object, using the class data model's keys.
+function collectData() {
+  const get = (name) => formElement.elements[name].value.trim();
+  const upload = formElement.elements.img.files[0];
+
+  const courses = Array.from(coursesBox.querySelectorAll(".course")).map((course) => {
+    const value = (name) => course.querySelector(`[name="${name}"]`).value.trim();
+    return {
+      department: value("department"),
+      courseNumber: value("courseNumber"),
+      courseTitle: value("courseTitle"),
+      reasonForTaking: value("reasonForTaking")
+    };
+  });
+
+  const footerLinks = Array.from(formElement.querySelectorAll('[name="footerLinks"]')).map((field) => ({
+    label: field.dataset.label,
+    url: field.value.trim()
+  }));
+
+  return {
+    firstName: get("firstName"),
+    middleName: get("middleName"),
+    nickname: get("nickname"),
+    lastName: get("lastName"),
+    acknowledgment: get("acknowledgment"),
+    acknowledgmentDate: get("acknowledgmentDate"),
+    prettyNameDivider: get("prettyNameDivider"),
+    adjectives: get("adjectives"),
+    animal: get("animal"),
+    img: upload ? "images/" + upload.name : defaultImage,
+    pictureAlt: get("pictureAlt"),
+    caption: get("caption"),
+    personalInfo: {
+      statement: get("statement"),
+      personalBackground: get("personalBackground"),
+      professionalBackground: get("professionalBackground"),
+      academicBackground: get("academicBackground"),
+      primaryWorkComputer: get("primaryWorkComputer"),
+      primaryWorkLocation: get("primaryWorkLocation"),
+      alternateComputerLocation: get("alternateComputerLocation")
+    },
+    courses: courses,
+    quote: get("quote"),
+    quoteAuthor: get("quoteAuthor"),
+    funnyItem: get("funnyItem"),
+    somethingToShare: get("somethingToShare"),
+    footerLinks: footerLinks
+  };
+}
+
 // Shortcut for making an element with optional text.
 function make(tag, text) {
   const el = document.createElement(tag);
@@ -99,16 +151,95 @@ function bullet(label, value) {
   return li;
 }
 
+// Builds the introduction's elements from the data.
+// imgSrc lets Submit show an uploaded picture while Generate HTML shows its file path.
+function buildIntroduction(data, imgSrc) {
+  const output = [];
+  const info = data.personalInfo;
+
+  // Name line, e.g. Sameer Sohail ~ Sandy Snake
+  const nameParts = [data.firstName];
+  if (data.middleName) {
+    nameParts.push(data.middleName);
+  }
+  if (data.nickname) {
+    nameParts.push("“" + data.nickname + "”");
+  }
+  nameParts.push(data.lastName);
+  output.push(make("h6", nameParts.join(" ") + " " + data.prettyNameDivider + " " +
+    data.adjectives + " " + data.animal));
+
+  // Picture
+  const figure = make("figure");
+  const img = make("img");
+  img.src = imgSrc;
+  img.alt = data.pictureAlt;
+  if (data.img === defaultImage) {
+    img.width = 800;
+    img.height = 1067;
+  }
+  figure.appendChild(img);
+  figure.appendChild(make("figcaption", data.caption));
+  output.push(figure);
+
+  output.push(make("p", info.statement));
+
+  // Main bullets
+  const list = make("ul");
+  list.appendChild(bullet("Personal Background", info.personalBackground));
+  list.appendChild(bullet("Professional Background", info.professionalBackground));
+  list.appendChild(bullet("Academic Background", info.academicBackground));
+  list.appendChild(bullet("Primary Work Computer", info.primaryWorkComputer));
+  list.appendChild(bullet("Primary Work Location", info.primaryWorkLocation));
+  list.appendChild(bullet("Alternate Computer & Location", info.alternateComputerLocation));
+
+  // Courses, with ITIS 3135 linking to the course contract like on my introduction page.
+  const coursesItem = make("li");
+  coursesItem.appendChild(make("strong", "Courses I'm Taking, & Why:"));
+  const courseList = make("ol");
+  data.courses.forEach((course) => {
+    const li = make("li");
+    const courseName = course.department + " " + course.courseNumber + " - " + course.courseTitle;
+    if (course.department.toUpperCase() === "ITIS" && course.courseNumber === "3135") {
+      const link = make("a", courseName);
+      link.href = "contract.html";
+      li.appendChild(link);
+    } else {
+      li.appendChild(document.createTextNode(courseName));
+    }
+    li.appendChild(document.createTextNode(": " + course.reasonForTaking));
+    courseList.appendChild(li);
+  });
+  coursesItem.appendChild(courseList);
+  list.appendChild(coursesItem);
+
+  // Optional extras only show up when filled in.
+  if (data.funnyItem) {
+    list.appendChild(bullet("Funny Thing", data.funnyItem));
+  }
+  if (data.somethingToShare) {
+    list.appendChild(bullet("Something I'd Like to Share", data.somethingToShare));
+  }
+  output.push(list);
+
+  // Quote
+  const quote = make("blockquote");
+  quote.appendChild(make("p", "“" + data.quote + "”"));
+  quote.appendChild(make("p", "-" + data.quoteAuthor));
+  output.push(quote);
+
+  return output;
+}
+
 // Puts the links from the form into the footer.
-function updateFooterLinks() {
+function updateFooterLinks(data) {
   const footerLinks = document.querySelectorAll("footer nav a");
   if (originalFooterLinks === null) {
     originalFooterLinks = Array.from(footerLinks).map((a) => a.href);
   }
-  const fields = formElement.querySelectorAll('[name="footerLinks"]');
   footerLinks.forEach((a, i) => {
-    if (fields[i] && fields[i].value.trim()) {
-      a.href = fields[i].value.trim();
+    if (data.footerLinks[i] && data.footerLinks[i].url) {
+      a.href = data.footerLinks[i].url;
     }
   });
 }
@@ -123,85 +254,17 @@ function restoreFooterLinks() {
   });
 }
 
-// Gathers the form data and shows the introduction in place of the form.
+// Removes any Generate HTML/JSON/XML boxes on the page.
+function removeOutputs() {
+  main.querySelectorAll(".code-output").forEach((box) => box.remove());
+}
+
+// Shows the introduction in place of the form.
 function showIntroduction() {
-  const get = (name) => formElement.elements[name].value.trim();
-  const output = [];
-
-  // Name line, e.g. Sameer Sohail ~ Sandy Snake
-  const nameParts = [get("firstName")];
-  if (get("middleName")) {
-    nameParts.push(get("middleName"));
-  }
-  if (get("nickname")) {
-    nameParts.push("“" + get("nickname") + "”");
-  }
-  nameParts.push(get("lastName"));
-  output.push(make("h6", nameParts.join(" ") + " " + get("prettyNameDivider") + " " +
-    get("adjectives") + " " + get("animal")));
-
-  // Picture: my picture unless the visitor uploaded their own.
-  const figure = make("figure");
-  const img = make("img");
+  const data = collectData();
   const upload = formElement.elements.img.files[0];
-  if (upload) {
-    img.src = URL.createObjectURL(upload);
-  } else {
-    img.src = defaultImage;
-    img.width = 800;
-    img.height = 1067;
-  }
-  img.alt = get("pictureAlt");
-  figure.appendChild(img);
-  figure.appendChild(make("figcaption", get("caption")));
-  output.push(figure);
-
-  output.push(make("p", get("statement")));
-
-  // Main bullets
-  const list = make("ul");
-  list.appendChild(bullet("Personal Background", get("personalBackground")));
-  list.appendChild(bullet("Professional Background", get("professionalBackground")));
-  list.appendChild(bullet("Academic Background", get("academicBackground")));
-  list.appendChild(bullet("Primary Work Computer", get("primaryWorkComputer")));
-  list.appendChild(bullet("Primary Work Location", get("primaryWorkLocation")));
-  list.appendChild(bullet("Alternate Computer & Location", get("alternateComputerLocation")));
-
-  // Courses, with ITIS 3135 linking to the course contract like on my introduction page.
-  const coursesItem = make("li");
-  coursesItem.appendChild(make("strong", "Courses I'm Taking, & Why:"));
-  const courseList = make("ol");
-  coursesBox.querySelectorAll(".course").forEach((course) => {
-    const value = (name) => course.querySelector(`[name="${name}"]`).value.trim();
-    const li = make("li");
-    const courseName = value("department") + " " + value("courseNumber") + " - " + value("courseTitle");
-    if (value("department").toUpperCase() === "ITIS" && value("courseNumber") === "3135") {
-      const link = make("a", courseName);
-      link.href = "contract.html";
-      li.appendChild(link);
-    } else {
-      li.appendChild(document.createTextNode(courseName));
-    }
-    li.appendChild(document.createTextNode(": " + value("reasonForTaking")));
-    courseList.appendChild(li);
-  });
-  coursesItem.appendChild(courseList);
-  list.appendChild(coursesItem);
-
-  // Optional extras only show up when filled in.
-  if (get("funnyItem")) {
-    list.appendChild(bullet("Funny Thing", get("funnyItem")));
-  }
-  if (get("somethingToShare")) {
-    list.appendChild(bullet("Something I'd Like to Share", get("somethingToShare")));
-  }
-  output.push(list);
-
-  // Quote
-  const quote = make("blockquote");
-  quote.appendChild(make("p", "“" + get("quote") + "”"));
-  quote.appendChild(make("p", "-" + get("quoteAuthor")));
-  output.push(quote);
+  const imgSrc = upload ? URL.createObjectURL(upload) : defaultImage;
+  const output = buildIntroduction(data, imgSrc);
 
   // Reset link so the visitor can do it again.
   const resetParagraph = make("p");
@@ -218,11 +281,72 @@ function showIntroduction() {
   resetParagraph.appendChild(resetLink);
   output.push(resetParagraph);
 
-  updateFooterLinks();
+  removeOutputs();
+  updateFooterLinks(data);
   formHeading.hidden = true;
   formElement.hidden = true;
   output.forEach((el) => main.appendChild(el));
   window.scrollTo(0, 0);
+}
+
+// Escapes text so it is safe inside XML.
+function escapeXML(text) {
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+// Turns a value into indented XML. Arrays use the singular tag for each item.
+function toXML(tag, value, indent) {
+  const pad = "  ".repeat(indent);
+  if (Array.isArray(value)) {
+    const itemTag = tag === "courses" ? "course" : "link";
+    const items = value.map((item) => toXML(itemTag, item, indent + 1)).join("\n");
+    return `${pad}<${tag}>\n${items}\n${pad}</${tag}>`;
+  }
+  if (typeof value === "object" && value !== null) {
+    const children = Object.keys(value).map((key) => toXML(key, value[key], indent + 1)).join("\n");
+    return `${pad}<${tag}>\n${children}\n${pad}</${tag}>`;
+  }
+  return `${pad}<${tag}>${escapeXML(value)}</${tag}>`;
+}
+
+// Makes the raw HTML code for the introduction the form would build.
+function makeHTML(data) {
+  const lines = ["<h2>Introduction Form</h2>"];
+  buildIntroduction(data, data.img).forEach((el) => {
+    lines.push(el.outerHTML
+      .replace(/<(ul|ol|figure|blockquote)>/g, "<$1>\n  ")
+      .replace(/<\/li><li>/g, "</li>\n  <li>")
+      .replace(/<\/(figcaption|p)><(p)>/g, "</$1>\n  <$2>")
+      .replace(/(<img[^>]*>)<figcaption>/g, "$1\n  <figcaption>")
+      .replace(/<\/(li|figcaption|p)><\/(ul|ol|figure|blockquote)>/g, "</$1>\n</$2>"));
+  });
+  return lines.join("\n");
+}
+
+// Adds a text box of raw code at the bottom of the page, or updates it if it's already there.
+function showCode(kind, code) {
+  let box = main.querySelector(`.code-output[data-kind="${kind}"]`);
+  if (!box) {
+    box = make("section");
+    box.className = "code-output";
+    box.dataset.kind = kind;
+    const label = make("label", kind + " Output");
+    const area = make("textarea");
+    area.readOnly = true;
+    area.spellcheck = false;
+    label.appendChild(area);
+    box.appendChild(label);
+    main.appendChild(box);
+  }
+  const area = box.querySelector("textarea");
+  area.value = code;
+  area.rows = Math.min(code.split("\n").length + 1, 30);
+  box.scrollIntoView({ behavior: "smooth" });
 }
 
 formElement.addEventListener("submit", () => {
@@ -233,6 +357,16 @@ formElement.addEventListener("submit", () => {
 
 // The Reset button restores the original values; this also brings back the original courses.
 formElement.addEventListener("reset", resetForm);
+
+document.getElementById("generate-html").addEventListener("click", () => {
+  showCode("HTML", makeHTML(collectData()));
+});
+document.getElementById("generate-json").addEventListener("click", () => {
+  showCode("JSON", JSON.stringify(collectData(), null, 2));
+});
+document.getElementById("generate-xml").addEventListener("click", () => {
+  showCode("XML", '<?xml version="1.0" encoding="UTF-8"?>\n' + toXML("introduction", collectData(), 0));
+});
 
 addCourseButton.addEventListener("click", addCourse);
 clearButton.addEventListener("click", clearForm);

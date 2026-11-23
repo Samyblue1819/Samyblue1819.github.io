@@ -37,6 +37,13 @@ textarea {
   align-self: center;
 }
 
+/* .code-output: a Generate HTML/JSON/XML box added by scripts/introduction.js; code reads best in a monospace font. */
+.code-output textarea {
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+  white-space: pre;
+}
+
 @media (max-width: 600px) {
   .course {
     grid-template-columns: 1fr;
