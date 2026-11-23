@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sameer Sohail's Sandy Snake | ITIS3135 | Class Introductions</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-course.png">
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/introductions.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <main>
+    <h2>Class Introductions</h2>
+    <p>Meet the class! Every card below is pulled live from the class introduction API. Each card shows a classmate's photo, their "pretty name" mascot (adjective + animal), and their favorite quote.</p>
+
+    <form id="intro-controls" class="intro-controls">
+      <label for="intro-search">Search by name or animal:</label>
+      <input type="search" id="intro-search" name="intro-search" placeholder="e.g. snake">
+      <label for="intro-sort">Sort by:</label>
+      <select id="intro-sort" name="intro-sort">
+        <option value="newest">Most recent</option>
+        <option value="name">Name (A to Z)</option>
+      </select>
+    </form>
+
+    <p id="intro-status" class="intro-status">Loading introductions...</p>
+    <div id="intro-grid" class="intro-grid"></div>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="scripts/introductions.js"></script>
+  <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+.intro-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.intro-controls input,
+.intro-controls select {
+  padding: 0.3rem;
+  border: 2px solid #1f5c46;
+  border-radius: 4px;
+  font-family: inherit;
+}
+.intro-status {
+  font-style: italic;
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.intro-card {
+  background-color: #fffdf7;
+  border: 2px solid #1f5c46;
+  border-top: 6px solid #e07a5f;
+  border-radius: 8px;
+  padding: 0.75rem;
+  text-align: center;
+}
+.intro-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.intro-card h3 {
+  margin: 0.5rem 0 0;
+  font-family: Georgia, serif;
+  color: #1f5c46;
+}
+.intro-mascot {
+  margin: 0.2rem 0;
+  font-weight: bold;
+  color: #8a3a22;
+}
+.intro-card blockquote {
+  margin: 0.5rem 0 0;
+  font-style: italic;
+}
+.intro-author {
+  margin: 0;
+  font-size: 0.85rem;
+}
