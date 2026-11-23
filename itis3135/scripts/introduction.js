@@ -99,6 +99,30 @@ function bullet(label, value) {
   return li;
 }
 
+// Puts the links from the form into the footer.
+function updateFooterLinks() {
+  const footerLinks = document.querySelectorAll("footer nav a");
+  if (originalFooterLinks === null) {
+    originalFooterLinks = Array.from(footerLinks).map((a) => a.href);
+  }
+  const fields = formElement.querySelectorAll('[name="footerLinks"]');
+  footerLinks.forEach((a, i) => {
+    if (fields[i] && fields[i].value.trim()) {
+      a.href = fields[i].value.trim();
+    }
+  });
+}
+
+// Puts the footer links back the way they were.
+function restoreFooterLinks() {
+  if (originalFooterLinks === null) {
+    return;
+  }
+  document.querySelectorAll("footer nav a").forEach((a, i) => {
+    a.href = originalFooterLinks[i];
+  });
+}
+
 // Gathers the form data and shows the introduction in place of the form.
 function showIntroduction() {
   const get = (name) => formElement.elements[name].value.trim();
@@ -199,30 +223,6 @@ function showIntroduction() {
   formElement.hidden = true;
   output.forEach((el) => main.appendChild(el));
   window.scrollTo(0, 0);
-}
-
-// Puts the links from the form into the footer.
-function updateFooterLinks() {
-  const footerLinks = document.querySelectorAll("footer nav a");
-  if (originalFooterLinks === null) {
-    originalFooterLinks = Array.from(footerLinks).map((a) => a.href);
-  }
-  const fields = formElement.querySelectorAll('[name="footerLinks"]');
-  footerLinks.forEach((a, i) => {
-    if (fields[i] && fields[i].value.trim()) {
-      a.href = fields[i].value.trim();
-    }
-  });
-}
-
-// Puts the footer links back the way they were.
-function restoreFooterLinks() {
-  if (originalFooterLinks === null) {
-    return;
-  }
-  document.querySelectorAll("footer nav a").forEach((a, i) => {
-    a.href = originalFooterLinks[i];
-  });
 }
 
 formElement.addEventListener("submit", () => {

@@ -40,7 +40,7 @@
           <input type="text" name="acknowledgment" value="I understand that this is a public document, and I won't put anything here I wouldn't want anyone to see." placeholder="I understand that this is a public document..." required>
         </label>
         <label>Acknowledgment Date
-          <input type="date" name="acknowledgmentDate" value="2026-08-25" required>
+          <input type="text" name="acknowledgmentDate" value="8/25/2026" placeholder="MM/DD/YYYY" required>
         </label>
       </fieldset>
 
@@ -97,7 +97,7 @@
 
       <fieldset>
         <legend>Courses I'm Taking, &amp; Why</legend>
-        <!-- id="courses": the box scripts/introduction.js adds new course fields to and removes them from. -->
+        <!-- div id="courses": a div is needed as a container for the course rows, so scripts/introduction.js has one place to add new course fields to and remove them from. -->
         <!-- class="course": groups one course's four boxes and its Delete button; class="delete-course": the Delete button that removes that course. -->
         <div id="courses">
           <fieldset class="course">
