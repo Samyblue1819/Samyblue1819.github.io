@@ -1,0 +1,63 @@
+/* pictures.css: styles for the Everything Pictures page only. */
+
+/* .side-by-side: lets the figures in an article sit next to each other instead of stacking. */
+.side-by-side {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+}
+
+/* .size-WIDTHxHEIGHT: shows an image at exactly that size in pixels.
+   Some of these change the proportions on purpose (Improper Image Proportions)
+   or stretch a small image (Improper Enlarging). max-width: none keeps the
+   stretch from being undone by the img rule in default.css. */
+.size-600x900 {
+  width: 600px;
+  height: 900px;
+  max-width: none;
+}
+.size-600x603 {
+  width: 600px;
+  height: 603px;
+  max-width: none;
+}
+.size-600x404 {
+  width: 600px;
+  height: 404px;
+  max-width: none;
+}
+.size-402x900 {
+  width: 402px;
+  height: 900px;
+  max-width: none;
+}
+.size-269x900 {
+  width: 269px;
+  height: 900px;
+  max-width: none;
+}
+.size-600x800 {
+  width: 600px;
+  height: 800px;
+  max-width: none;
+}
+.size-600x536 {
+  width: 600px;
+  height: 536px;
+  max-width: none;
+}
+.size-600x359 {
+  width: 600px;
+  height: 359px;
+  max-width: none;
+}
+.size-402x800 {
+  width: 402px;
+  height: 800px;
+  max-width: none;
+}
+.size-269x800 {
+  width: 269px;
+  height: 800px;
+  max-width: none;
+}

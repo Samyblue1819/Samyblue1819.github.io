@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sameer Sohail's Sandy Snake | ITIS3135 | Everything Pictures</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-course.png">
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/pictures.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <main>
+    <!-- Classes on this page (defined in styles/pictures.css): "side-by-side" puts figures next to each other; "size-WIDTHxHEIGHT" sets an image to that exact pixel size, sometimes distorted on purpose to show improper proportions or enlarging. -->
+    <h2>Everything Pictures</h2>
+    <p>This page shows how images behave on the web. Using a large photo from Pexels and a photo I took myself, it compares common formats (JPG, GIF and PNG), shows the difference between shrinking an image with CSS and resizing it in an editor, and demonstrates what happens when an image's proportions are changed or a small image is stretched to look big.</p>
+
+    <section>
+      <h3>Demonstrating Image Manipulation with a Colored Powder Market Photo from Pexels.com</h3>
+      <p>I picked this photo because its bright colors and the fine weave of the burlap sacks make every change in format and size easy to see. It was taken by <a href="https://www.pexels.com/@erick-melgar-2150397853/" target="_blank">Erick Melgar</a> and is free to use on <a href="https://www.pexels.com/photo/vibrant-colored-powders-in-outdoor-market-37762861/" target="_blank">Pexels</a>. Erick shares a personal photography portfolio on Pexels with more than 160 free photos that have been viewed over 740,000 times, and he posts more of his work on Instagram as nueveadventurs. It shows sacks of blue, orange, red and pink powder at an outdoor market, with stalls and shoppers behind them. The original is a portrait JPG, 3456 x 5184 pixels, and 1.74 MB.</p>
+
+      <article>
+        <h4>Original Image</h4>
+        <p>Click to open the image in its original (JPG) format and in each converted format:
+          <a href="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels.jpg" target="_blank">Original Image (JPG)</a> |
+          <a href="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels-gif.gif" target="_blank">Original Image as a GIF</a> |
+          <a href="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels-greyscale.jpg" target="_blank">Original Image in Greyscale (JPG)</a> |
+          <a href="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels-bw.png" target="_blank">Original Image in Black and White (PNG)</a>
+        </p>
+      </article>
+
+      <article>
+        <h4>Downsizing Images with CSS</h4>
+        <!-- Inline style on purpose: the assignment asks for inline CSS to shrink the full-size original to 15% while keeping its proportions. -->
+        <figure class="side-by-side">
+          <img src="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels-518x778.jpg" alt="Burlap sacks of bright blue, orange, red and pink powder at an outdoor market" style="width: 518px; height: 778px;">
+          <figcaption>The full 3456 x 5184 original (1.74 MB) shown at 518 x 778 (15%) with CSS. It looks small, but the browser still downloads every pixel.</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h4>Proper Reduction of Image with Editor</h4>
+        <figure class="side-by-side">
+          <img src="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels-600x900.jpg" alt="Burlap sacks of bright blue, orange, red and pink powder at an outdoor market" class="size-600x900">
+          <figcaption>Resized to 600 x 900 in an image editor. Same proportions, a much smaller file, and CSS still sets the size so the space is reserved while it loads.</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h4>Improper Image Proportions with CSS</h4>
+        <figure class="side-by-side">
+          <img src="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels-600x603.jpg" alt="Burlap sacks of bright blue, orange, red and pink powder at an outdoor market" class="size-600x603">
+          <figcaption>Width kept at 600, height cut 33% to 603: squashed flat.</figcaption>
+        </figure>
+        <figure class="side-by-side">
+          <img src="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels-600x404.jpg" alt="Burlap sacks of bright blue, orange, red and pink powder at an outdoor market" class="size-600x404">
+          <figcaption>Height cut another 33% to 404: even flatter.</figcaption>
+        </figure>
+        <figure class="side-by-side">
+          <img src="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels-402x900.jpg" alt="Burlap sacks of bright blue, orange, red and pink powder at an outdoor market" class="size-402x900">
+          <figcaption>Height kept at 900, width cut 33% to 402: squeezed thin.</figcaption>
+        </figure>
+        <figure class="side-by-side">
+          <img src="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels-269x900.jpg" alt="Burlap sacks of bright blue, orange, red and pink powder at an outdoor market" class="size-269x900">
+          <figcaption>Width cut another 33% to 269: even thinner.</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h4>Improper Enlarging with CSS</h4>
+        <figure class="side-by-side">
+          <img src="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels-600x900.jpg" alt="Burlap sacks of bright blue, orange, red and pink powder at an outdoor market" class="size-600x900">
+          <figcaption>The 600 x 900 editor version at its real size.</figcaption>
+        </figure>
+        <figure class="side-by-side">
+          <img src="images/vibrant-colored-powders-in-outdoor-market-37762861@erick-melgar_pexels-150x225.jpg" alt="Burlap sacks of bright blue, orange, red and pink powder at an outdoor market" class="size-600x900">
+          <figcaption>The 150 x 225 version (25%) stretched to 600 x 900 with CSS. The browser has to invent pixels, so it looks blurry.</figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <hr>
+
+    <section>
+      <h3>Demonstrating Image Manipulation with My Own Photo of a Round Plate Next to My Hand</h3>
+      <p>I took this photo with my phone to put a perfectly round object next to something with no perfect proportions: my hand. If the plate ever looks like an oval on this page, the image has been distorted. It shows my right hand laid flat beside a turquoise plate with a teal floral pattern, shot from straight above on a grey surface. The original is a portrait JPG, 3024 x 4032 pixels, and 3.22 MB.</p>
+
+      <article>
+        <h4>Original Image</h4>
+        <p>Click to open the image in its original (JPG) format and in each converted format:
+          <a href="images/plate-next-to-hand@sameersohail.jpg" target="_blank">Original Image (JPG)</a> |
+          <a href="images/plate-next-to-hand@sameersohail-gif.gif" target="_blank">Original Image as a GIF</a> |
+          <a href="images/plate-next-to-hand@sameersohail-greyscale.jpg" target="_blank">Original Image in Greyscale (JPG)</a> |
+          <a href="images/plate-next-to-hand@sameersohail-bw.png" target="_blank">Original Image in Black and White (PNG)</a>
+        </p>
+      </article>
+
+      <article>
+        <h4>Downsizing Images with CSS</h4>
+        <!-- Inline style on purpose: the assignment asks for inline CSS to shrink the full-size original to 15% while keeping its proportions. -->
+        <figure class="side-by-side">
+          <img src="images/plate-next-to-hand@sameersohail-454x605.jpg" alt="A hand laid flat next to a round turquoise plate with a teal floral pattern" style="width: 454px; height: 605px;">
+          <figcaption>The full 3024 x 4032 original (3.22 MB) shown at 454 x 605 (15%) with CSS. It looks small, but the browser still downloads every pixel.</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h4>Proper Reduction of Image with Editor</h4>
+        <figure class="side-by-side">
+          <img src="images/plate-next-to-hand@sameersohail-600x800.jpg" alt="A hand laid flat next to a round turquoise plate with a teal floral pattern" class="size-600x800">
+          <figcaption>Resized to 600 x 800 in an image editor. Same proportions, a much smaller file, and CSS still sets the size so the space is reserved while it loads.</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h4>Improper Image Proportions with CSS</h4>
+        <figure class="side-by-side">
+          <img src="images/plate-next-to-hand@sameersohail-600x536.jpg" alt="A hand laid flat next to a round turquoise plate with a teal floral pattern" class="size-600x536">
+          <figcaption>Width kept at 600, height cut 33% to 536: squashed flat.</figcaption>
+        </figure>
+        <figure class="side-by-side">
+          <img src="images/plate-next-to-hand@sameersohail-600x359.jpg" alt="A hand laid flat next to a round turquoise plate with a teal floral pattern" class="size-600x359">
+          <figcaption>Height cut another 33% to 359: even flatter.</figcaption>
+        </figure>
+        <figure class="side-by-side">
+          <img src="images/plate-next-to-hand@sameersohail-402x800.jpg" alt="A hand laid flat next to a round turquoise plate with a teal floral pattern" class="size-402x800">
+          <figcaption>Height kept at 800, width cut 33% to 402: squeezed thin.</figcaption>
+        </figure>
+        <figure class="side-by-side">
+          <img src="images/plate-next-to-hand@sameersohail-269x800.jpg" alt="A hand laid flat next to a round turquoise plate with a teal floral pattern" class="size-269x800">
+          <figcaption>Width cut another 33% to 269: even thinner.</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h4>Improper Enlarging with CSS</h4>
+        <figure class="side-by-side">
+          <img src="images/plate-next-to-hand@sameersohail-600x800.jpg" alt="A hand laid flat next to a round turquoise plate with a teal floral pattern" class="size-600x800">
+          <figcaption>The 600 x 800 editor version at its real size.</figcaption>
+        </figure>
+        <figure class="side-by-side">
+          <img src="images/plate-next-to-hand@sameersohail-150x200.jpg" alt="A hand laid flat next to a round turquoise plate with a teal floral pattern" class="size-600x800">
+          <figcaption>The 150 x 200 version (25%) stretched to 600 x 800 with CSS. The browser has to invent pixels, so it looks blurry.</figcaption>
+        </figure>
+      </article>
+    </section>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>
