@@ -18,9 +18,15 @@
 
   <main>
     <h2>Home</h2>
-    <figure>
-      <img src="images/hero-glossy-red-car.jpg" alt="Glossy red car with a mirror-like paint finish" width="1200" height="1800">
-      <figcaption>Fresh skin, same ride.</figcaption>
+    <!-- Slideshow: the ids let scripts/slideshow.js swap the photo and caption, the span holds the slide counter text, and the class styles the button row. -->
+    <figure id="slideshow">
+      <img id="slide-image" src="images/hero-glossy-red-car.jpg" alt="Glossy red car with a mirror-like paint finish" width="1200" height="1800">
+      <figcaption id="slide-caption">Fresh skin, same ride.</figcaption>
+      <p class="slide-controls">
+        <button type="button" id="slide-prev">&larr; Previous</button>
+        <span id="slide-count">1 of 5</span>
+        <button type="button" id="slide-next">Next &rarr;</button>
+      </p>
     </figure>
     <p>Welcome to <strong>Sandy Snake Refinishing</strong>, a small auto body shop in Charlotte that does one thing really well: bringing tired paint back to life. Faded clear coat, swirl marks, scratches, rust bubbles, or a bad respray from a previous owner, we sand it down and build it back up.</p>
     <p>Like a snake shedding its skin, your car leaves the old, worn finish behind. What comes out is the same car you love, with paint that looks like it just left the factory, or better.</p>
@@ -30,6 +36,7 @@
   <div data-include="components/footer.html"></div>
 
   <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="scripts/slideshow.js"></script>
   <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>

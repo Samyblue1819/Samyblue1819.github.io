@@ -100,3 +100,39 @@ footer {
     padding: 0.5rem;
   }
 }
+/* Classes and ids below style the interactive parts added by the scripts in scripts/. */
+.slide-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+button {
+  padding: 0.4rem 0.9rem;
+  border: 2px solid #d6b278;
+  border-radius: 4px;
+  background-color: #33343b;
+  color: #e6decd;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #c8283a;
+}
+select {
+  padding: 0.3rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+#estimate-result {
+  font-weight: bold;
+  color: #d6b278;
+}
+.status-open {
+  font-weight: bold;
+  color: #8fd18f;
+}
+.status-closed {
+  font-weight: bold;
+  color: #f2a65a;
+}

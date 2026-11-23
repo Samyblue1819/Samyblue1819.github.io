@@ -30,12 +30,37 @@
       <li><strong>Full Respray:</strong> a complete sand down and repaint, in the original color or a new one.</li>
       <li><strong>Ceramic Coating:</strong> a hard protective layer to keep the new finish shining.</li>
     </ul>
+    <h3>Get a Quick Estimate</h3>
+    <!-- Estimate form: the ids let scripts/estimate.js read the choices and show the result. -->
+    <form id="estimate-form">
+      <p>
+        <label for="service-choice">Service:</label>
+        <select id="service-choice" name="service-choice">
+          <option value="correction">Paint Correction</option>
+          <option value="spot">Spot Repair</option>
+          <option value="clear">Clear Coat Restoration</option>
+          <option value="respray">Full Respray</option>
+          <option value="ceramic">Ceramic Coating</option>
+        </select>
+      </p>
+      <p>
+        <label for="size-choice">Vehicle size:</label>
+        <select id="size-choice" name="size-choice">
+          <option value="small">Small car or coupe</option>
+          <option value="medium">Sedan or small SUV</option>
+          <option value="large">Truck or large SUV</option>
+        </select>
+      </p>
+      <p><button type="submit">Show Estimate</button></p>
+    </form>
+    <p id="estimate-result" aria-live="polite">Pick a service and vehicle size to see a price range.</p>
     <p>Not sure which one you need? Bring the car by and we will walk around it with you and explain what we see.</p>
   </main>
 
   <div data-include="components/footer.html"></div>
 
   <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="scripts/estimate.js"></script>
   <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>

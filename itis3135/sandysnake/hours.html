@@ -23,6 +23,8 @@
       <figcaption>Open late on weekdays for after-work drop offs.</figcaption>
     </figure>
     <p>We keep hours that work for people with day jobs. Drop your car off on the way to work or after you clock out.</p>
+    <!-- The id lets scripts/open-status.js write the live open or closed message here. -->
+    <p id="open-status" aria-live="polite">Checking if we are open...</p>
     <table>
       <caption>Shop Hours</caption>
       <thead>
@@ -40,6 +42,7 @@
   <div data-include="components/footer.html"></div>
 
   <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="scripts/open-status.js"></script>
   <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
 </body>
 </html>
