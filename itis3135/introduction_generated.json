@@ -1,0 +1,83 @@
+{
+  "firstName": "Sameer",
+  "middleName": "",
+  "nickname": "",
+  "lastName": "Sohail",
+  "acknowledgment": "I understand that this is a public document, and I won't put anything here I wouldn't want anyone to see.",
+  "acknowledgmentDate": "8/25/2026",
+  "prettyNameDivider": "~",
+  "adjectives": "Sandy",
+  "animal": "Snake",
+  "img": "images/intro-photo.jpg",
+  "pictureAlt": "Sameer in a black shirt and backpack, standing outside at night",
+  "caption": "Leaving gym",
+  "personalInfo": {
+    "statement": "I am a junior currently pursuing a degree in computer science with a concentration in Information Technology. I'm looking forward to learning more about frontend development. I also enjoy working with computers and cars, and I like learning how things work.",
+    "personalBackground": "Born in Brooklyn, grew up in Charlotte.",
+    "professionalBackground": "Dispatcher for a hotshot trucker, car bodywork/mechanic.",
+    "academicBackground": "CS 2027",
+    "primaryWorkComputer": "Desktop, Windows 11, 25H2",
+    "primaryWorkLocation": "Home/Office",
+    "alternateComputerLocation": "M4 Mac Air, Campus/Library"
+  },
+  "courses": [
+    {
+      "department": "ITSC",
+      "courseNumber": "3166",
+      "courseTitle": "Intro to Computer Networks",
+      "reasonForTaking": "A technical elective that interests me because I quite enjoy networking."
+    },
+    {
+      "department": "ITIS",
+      "courseNumber": "3135",
+      "courseTitle": "Front-End Web Development",
+      "reasonForTaking": "This class is required and also something new to learn."
+    },
+    {
+      "department": "ITSC",
+      "courseNumber": "3100",
+      "courseTitle": "Intro to Info Security & Privacy",
+      "reasonForTaking": "Another technical elective that is interesting to me."
+    },
+    {
+      "department": "ITSC",
+      "courseNumber": "3260",
+      "courseTitle": "Database Design & Implementation",
+      "reasonForTaking": "A required course, and I like SQL."
+    }
+  ],
+  "quote": "Be in this world as if you were a stranger or a traveler along a path.",
+  "quoteAuthor": "Ṣaḥīḥ al-Bukhārī 6416",
+  "funnyItem": "",
+  "somethingToShare": "",
+  "footerLinks": [
+    {
+      "label": "CLT Web",
+      "url": "https://webpages.charlotte.edu/ssohail1/"
+    },
+    {
+      "label": "GitHub.io",
+      "url": "https://samyblue1819.github.io/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/Samyblue1819"
+    },
+    {
+      "label": "ITIS3135 GitHub.io",
+      "url": "https://samyblue1819.github.io/itis3135/"
+    },
+    {
+      "label": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/ssohail"
+    },
+    {
+      "label": "Codecademy",
+      "url": "https://www.codecademy.com/profiles/ssohail1"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/sameer-sohail-bb02a22b6"
+    }
+  ]
+}
