@@ -1,0 +1,105 @@
+/* Sandy Snake palette: asphalt background, sandy tan text and lines,
+   candy red accents like fresh clear-coated paint.
+   No pure black or white is used. */
+body {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #222328;
+  color: #e6decd;
+  font-family: "Barlow", "Segoe UI", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 4px solid #c8283a;
+}
+header nav {
+  flex-basis: 100%;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+}
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", Impact, sans-serif;
+  letter-spacing: 0.05em;
+  color: #d6b278;
+}
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+}
+h2 {
+  font-size: 2.2rem;
+  border-left: 6px solid #c8283a;
+  padding-left: 0.6rem;
+}
+a {
+  color: #f2a65a;
+}
+a:visited {
+  color: #f2a65a;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+main img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  border: 3px solid #d6b278;
+  border-radius: 6px;
+}
+figure {
+  margin: 1.5rem 0;
+}
+figcaption {
+  font-style: italic;
+  color: #b9b09d;
+}
+ul,
+ol {
+  padding-left: 1.4rem;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  border: 1px solid #5a5b62;
+  padding: 0.4rem 0.6rem;
+  text-align: left;
+}
+th {
+  background-color: #33343b;
+  color: #d6b278;
+}
+footer {
+  margin-top: 2rem;
+  padding-top: 0.75rem;
+  border-top: 4px solid #c8283a;
+  font-size: 0.9rem;
+  text-align: center;
+}
+/* tagline class: only the slogan line in the footer gets the bigger size */
+.tagline {
+  font-size: 1.2rem;
+  color: #d6b278;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+}
