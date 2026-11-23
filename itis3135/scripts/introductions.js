@@ -21,17 +21,13 @@ function makeCard(person) {
     card.append(picture);
   }
 
+  // Heading shows the name and mascot, with spaces on both sides of the divider
   const heading = document.createElement("h3");
-  heading.textContent = person.name;
+  heading.className = "intro-name";
+  const divider = data.prettyNameDivider || "~";
+  const mascot = ((data.adjectives || "") + " " + (data.animal || "")).trim();
+  heading.textContent = mascot ? person.name + " " + divider + " " + mascot : person.name;
   card.append(heading);
-
-  if (data.adjectives || data.animal) {
-    const mascot = document.createElement("p");
-    mascot.className = "intro-mascot";
-    const divider = data.prettyNameDivider || "~";
-    mascot.textContent = divider + " " + ((data.adjectives || "") + " " + (data.animal || "")).trim() + " " + divider;
-    card.append(mascot);
-  }
 
   if (data.quote) {
     const quote = document.createElement("blockquote");
