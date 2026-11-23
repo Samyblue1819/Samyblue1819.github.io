@@ -1,0 +1,44 @@
+/* introduction_form.css: styles for the form on the Introduction Form page only.
+   Nothing here touches the finished introduction, so it matches introduction.html. */
+
+fieldset {
+  margin: 1rem 0;
+  border: 2px solid #1f5c46;
+}
+legend {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  color: #1f5c46;
+}
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+input,
+textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.3rem;
+  font-family: inherit;
+}
+
+/* .course: one course's four text boxes plus its Delete button, side by side. */
+.course {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr 3fr auto;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+  border-width: 1px;
+}
+
+/* .delete-course: the Delete button beside each course. */
+.delete-course {
+  align-self: center;
+}
+
+@media (max-width: 600px) {
+  .course {
+    grid-template-columns: 1fr;
+  }
+}

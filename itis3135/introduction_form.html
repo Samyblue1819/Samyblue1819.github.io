@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sameer Sohail's Sandy Snake | ITIS3135 | Introduction Form</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-course.png">
+  <link rel="stylesheet" href="styles/default.css">
+  <link rel="stylesheet" href="styles/introduction_form.css">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <main>
+    <h2>Introduction Form</h2>
+    <h3>Please Submit the Form Below</h3>
+
+    <!-- id="form": lets scripts/introduction.js find the form to validate it, stop the default submit, and replace it with the finished introduction. -->
+    <form id="form">
+      <fieldset>
+        <legend>Name</legend>
+        <label>First Name
+          <input type="text" name="firstName" value="Sameer" placeholder="First name" required>
+        </label>
+        <label>Middle Name or Initial (optional)
+          <input type="text" name="middleName" value="" placeholder="Middle name or initial">
+        </label>
+        <label>Nickname or Preferred Name (optional)
+          <input type="text" name="nickname" value="" placeholder="Nickname">
+        </label>
+        <label>Last Name
+          <input type="text" name="lastName" value="Sohail" placeholder="Last name" required>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Acknowledgment</legend>
+        <label>Acknowledgment Statement
+          <input type="text" name="acknowledgment" value="I understand that this is a public document, and I won't put anything here I wouldn't want anyone to see." placeholder="I understand that this is a public document..." required>
+        </label>
+        <label>Acknowledgment Date
+          <input type="date" name="acknowledgmentDate" value="2026-08-25" required>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Mascot</legend>
+        <label>Mascot Adjective
+          <input type="text" name="adjectives" value="Sandy" placeholder="Adjective, e.g. Sandy" required>
+        </label>
+        <label>Mascot Animal
+          <input type="text" name="animal" value="Snake" placeholder="Animal, e.g. Snake" required>
+        </label>
+        <label>Divider
+          <input type="text" name="prettyNameDivider" value="~" placeholder="~, |, or another symbol" required>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Picture</legend>
+        <label>Picture (leave empty to use my picture)
+          <input type="file" name="img" accept="image/*">
+        </label>
+        <label>Picture Description (alt text)
+          <input type="text" name="pictureAlt" value="Sameer in a black shirt and backpack, standing outside at night" placeholder="Describe the picture" required>
+        </label>
+        <label>Picture Caption
+          <input type="text" name="caption" value="Leaving gym" placeholder="Picture caption" required>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>About You</legend>
+        <label>Personal Statement
+          <textarea name="statement" rows="4" placeholder="A few sentences about yourself" required>I am a junior currently pursuing a degree in computer science with a concentration in Information Technology. I'm looking forward to learning more about frontend development. I also enjoy working with computers and cars, and I like learning how things work.</textarea>
+        </label>
+        <label>Personal Background
+          <input type="text" name="personalBackground" value="Born in Brooklyn, grew up in Charlotte." placeholder="Where you're from" required>
+        </label>
+        <label>Professional Background
+          <input type="text" name="professionalBackground" value="Dispatcher for a hotshot trucker, car bodywork/mechanic." placeholder="Jobs or work experience" required>
+        </label>
+        <label>Academic Background
+          <input type="text" name="academicBackground" value="CS 2027" placeholder="Major and graduation year" required>
+        </label>
+        <label>Primary Work Computer
+          <input type="text" name="primaryWorkComputer" value="Desktop, Windows 11, 25H2" placeholder="Computer, operating system, version" required>
+        </label>
+        <label>Primary Work Location
+          <input type="text" name="primaryWorkLocation" value="Home/Office" placeholder="Where you usually work" required>
+        </label>
+        <label>Alternate Computer &amp; Location
+          <input type="text" name="alternateComputerLocation" value="M4 Mac Air, Campus/Library" placeholder="Backup computer and location" required>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Courses I'm Taking, &amp; Why</legend>
+        <!-- id="courses": the box scripts/introduction.js adds new course fields to and removes them from. -->
+        <!-- class="course": groups one course's four boxes and its Delete button; class="delete-course": the Delete button that removes that course. -->
+        <div id="courses">
+          <fieldset class="course">
+            <input type="text" name="department" value="ITSC" placeholder="Department" aria-label="Department" required>
+            <input type="text" name="courseNumber" value="3166" placeholder="Number" aria-label="Course number" required>
+            <input type="text" name="courseTitle" value="Intro to Computer Networks" placeholder="Course name" aria-label="Course name" required>
+            <input type="text" name="reasonForTaking" value="A technical elective that interests me because I quite enjoy networking." placeholder="Why you're taking it" aria-label="Reason for taking" required>
+            <button type="button" class="delete-course">Delete</button>
+          </fieldset>
+          <fieldset class="course">
+            <input type="text" name="department" value="ITIS" placeholder="Department" aria-label="Department" required>
+            <input type="text" name="courseNumber" value="3135" placeholder="Number" aria-label="Course number" required>
+            <input type="text" name="courseTitle" value="Front-End Web Development" placeholder="Course name" aria-label="Course name" required>
+            <input type="text" name="reasonForTaking" value="This class is required and also something new to learn." placeholder="Why you're taking it" aria-label="Reason for taking" required>
+            <button type="button" class="delete-course">Delete</button>
+          </fieldset>
+          <fieldset class="course">
+            <input type="text" name="department" value="ITSC" placeholder="Department" aria-label="Department" required>
+            <input type="text" name="courseNumber" value="3100" placeholder="Number" aria-label="Course number" required>
+            <input type="text" name="courseTitle" value="Intro to Info Security &amp; Privacy" placeholder="Course name" aria-label="Course name" required>
+            <input type="text" name="reasonForTaking" value="Another technical elective that is interesting to me." placeholder="Why you're taking it" aria-label="Reason for taking" required>
+            <button type="button" class="delete-course">Delete</button>
+          </fieldset>
+          <fieldset class="course">
+            <input type="text" name="department" value="ITSC" placeholder="Department" aria-label="Department" required>
+            <input type="text" name="courseNumber" value="3260" placeholder="Number" aria-label="Course number" required>
+            <input type="text" name="courseTitle" value="Database Design &amp; Implementation" placeholder="Course name" aria-label="Course name" required>
+            <input type="text" name="reasonForTaking" value="A required course, and I like SQL." placeholder="Why you're taking it" aria-label="Reason for taking" required>
+            <button type="button" class="delete-course">Delete</button>
+          </fieldset>
+        </div>
+        <!-- id="add-course": the button scripts/introduction.js listens to for adding a new course. -->
+        <button type="button" id="add-course">Add Course</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Quote</legend>
+        <label>Quote
+          <input type="text" name="quote" value="Be in this world as if you were a stranger or a traveler along a path." placeholder="A quote you like" required>
+        </label>
+        <label>Quote Author
+          <input type="text" name="quoteAuthor" value="Ṣaḥīḥ al-Bukhārī 6416" placeholder="Who said it" required>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Extras (optional)</legend>
+        <label>Funny Thing
+          <input type="text" name="funnyItem" value="" placeholder="Something funny about you">
+        </label>
+        <label>Something I'd Like to Share
+          <input type="text" name="somethingToShare" value="" placeholder="Anything else to share">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Links</legend>
+        <label>CLT Web
+          <input type="url" name="footerLinks" data-label="CLT Web" value="https://webpages.charlotte.edu/ssohail1/" placeholder="https://webpages.charlotte.edu/your-id/" required>
+        </label>
+        <label>GitHub.io
+          <input type="url" name="footerLinks" data-label="GitHub.io" value="https://samyblue1819.github.io/" placeholder="https://your-username.github.io/" required>
+        </label>
+        <label>GitHub
+          <input type="url" name="footerLinks" data-label="GitHub" value="https://github.com/Samyblue1819" placeholder="https://github.com/your-username" required>
+        </label>
+        <label>ITIS3135 GitHub.io
+          <input type="url" name="footerLinks" data-label="ITIS3135 GitHub.io" value="https://samyblue1819.github.io/itis3135/" placeholder="https://your-username.github.io/itis3135/" required>
+        </label>
+        <label>freeCodeCamp
+          <input type="url" name="footerLinks" data-label="freeCodeCamp" value="https://www.freecodecamp.org/ssohail" placeholder="https://www.freecodecamp.org/your-username" required>
+        </label>
+        <label>Codecademy
+          <input type="url" name="footerLinks" data-label="Codecademy" value="https://www.codecademy.com/profiles/ssohail1" placeholder="https://www.codecademy.com/profiles/your-username" required>
+        </label>
+        <label>LinkedIn
+          <input type="url" name="footerLinks" data-label="LinkedIn" value="https://www.linkedin.com/in/sameer-sohail-bb02a22b6" placeholder="https://www.linkedin.com/in/your-profile" required>
+        </label>
+      </fieldset>
+
+      <p>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <!-- id="clear": the button scripts/introduction.js uses to empty every field. -->
+        <button type="button" id="clear">Clear</button>
+      </p>
+    </form>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="scripts/introduction.js"></script>
+  <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+</body>
+</html>
